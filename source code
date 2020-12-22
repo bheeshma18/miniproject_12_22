@@ -1,0 +1,426 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, PHP, Ruby, 
+C#, VB, Perl, Swift, Prolog, Javascript, Pascal, HTML, CSS, JS
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+// declaring as the global variables
+int k=0,result=0;  
+int a,b;
+float num;
+int menu()
+{
+    int ch;
+    //includes basic calculator functions
+    printf("\n1.Addition");   
+    printf("\n2.Substraction");          
+    printf("\n3.Multiplication");      
+    printf("\n4.Division");         
+    printf("\n5.Remainder");
+   //includes scientific calculator functions
+    printf("\n6.Power value");
+    printf("\n7.Sin value");
+    printf("\n8.Cos value");    
+    printf("\n9.Tan value");
+    printf("\n10.cot value");
+    printf("\n11.cosec value");
+    printf("\n12.sec value");
+    printf("\n13.log value");
+    printf("\n14.square root");
+    printf("\n15.Factorial");
+    printf("\n16.MatrixAddition");
+    printf("\n17.MatrixMultiplication");
+    printf("\n18.CLEAR");
+    printf("\n19.EXIT");
+    printf("\nEnter your choice");
+    scanf("%d",&ch);
+    return(ch);
+}
+
+void Addition()
+{
+    int a,b;                         // we can declare variable here also in local
+    if(k)                            //if k has any one value exits then it will excute
+    {
+        printf("\nEnter a number : ");
+        scanf("%d",&a); 
+        result+=a;
+        printf("\nResult=%d",result);
+    }
+    else
+    {
+        printf("Enter two numbers");
+        scanf("%d%d",&a,&b);
+        result=a+b;
+        printf("\nResult=%d",result);
+    }
+    k=1;                      
+}
+
+void Substraction()
+{
+    if(k)
+    {
+        printf("\nEnter a number : ");
+        scanf("%d",&a); 
+        result-=a;
+        printf("\nResult=%d",result);
+    }
+else
+{
+    printf("\nEnter two numbers :");
+    scanf("%d%d",&a,&b);
+    result=a-b;
+    printf("\nResult=%d",result);
+}
+}
+
+void Multiplication()
+{
+    if(k)
+    {
+        printf("\nEnter a number : ");
+        scanf("%d",&a); 
+        result*=a;
+        printf("\nResult=%d",result);
+    }
+else
+{
+    printf("\nEnter two numbers :");
+    scanf("%d%d",&a,&b);
+    result=a*b;
+    printf("\nResult=%d",result);
+}
+}
+
+void Division()
+{
+    if(k)
+    {
+        printf("\nEnter a number : ");
+        scanf("%d",&a); 
+        result/=a;
+        printf("\nResult=%d",result);
+    }
+else
+{
+    printf("\nEnter two numbers :");
+    scanf("%d%d",&a,&b);
+    result=a/b;
+    printf("\nResult=%d",result);
+}
+}
+
+void Remainder()
+{
+    if(k)
+    {
+        printf("\nEnter a number : ");
+        scanf("%d",&a); 
+        result%=a;
+        printf("\nResult=%d",result);
+    }
+else
+{
+    printf("\nEnter two numbers :");
+    scanf("%d%d",&a,&b);
+    result=a%b;
+    printf("\nResult=%d",result);
+}
+}
+
+void Power()
+{
+    printf("\nEnter two numbers :");
+    scanf("%d%d",&a,&b);
+    result=pow(a,b);
+    printf("\nResult=%d",result);
+}
+
+void Sin()
+{
+    float n;
+    printf("\nEnter any value  :");
+    scanf("%f",&n);
+    num = sin(n*3.14159/180);
+    printf("\nResult=%f",num);
+}
+
+void Cos()
+{
+    float n;
+    printf("\nEnter any value :");
+    scanf("%f",&n);
+    num=cos(n*3.14159/180);
+    printf("\nResult=%f",num);
+}
+
+void Tan()
+{
+    float n;
+    printf("\nEnter any value :");
+    scanf("%f",&n);
+    num=tan(n*3.14159/180);
+    printf("\nResult=%f",num);
+}
+
+void Cot()
+{
+    float n;
+    printf("\nEnter any value :");
+    scanf("%f",&n);
+    num=cos(n*3.14159/180)/sin(n*3.14159/180);
+    printf("\nResult=%f",num);
+}
+
+void Cosec()
+{
+    float n;
+    printf("\nEnter any value :");
+    scanf("%f",&n);
+    num=1/sin(n*3.14159/180);
+    printf("\nResult=%f",num);
+}
+
+void Sec()
+{  
+    float n;
+    printf("\nEnter any value :");
+    scanf("%f",&n);
+    num=1/cos(n*3.14159/180);
+    printf("\nResult=%f",num);
+}
+
+void Log()
+{
+    float n;
+    printf("\nEnter any value :");
+    scanf("%f",&n);
+    num=log(n);
+    printf("\nResult=%f",num);
+}
+
+void SquareRoot()
+{
+    int n;
+    printf("\nEnter any value :");
+    scanf("%d",&n);
+    result=sqrt(n);
+    printf("\nResult=%d",result);
+}
+
+void Factorial()
+{
+    int i,number,fact=1;
+    printf("enter a number to calculate factorial");
+    scanf("%d",&number);
+    for(i=1;i<=number;i++)
+    {
+        fact=fact*i;
+    }
+    printf("\nResult=%d",fact);
+
+}
+void MatrixAddition()
+{
+    int row, column, i, j;
+    int firstMatrix[10][10], secondMatrix[10][10], sumMatrix[10][10];
+ 
+   printf("Enter the number of rows and columns of matrix\n");
+   scanf("%d%d", &row, &column);
+   printf("Enter the elements of first matrix: \n");
+ 
+   for (i=0;i<row;i++)
+   {
+      for (j=0;j<column;j++)
+      {
+          scanf("%d", &firstMatrix[i][j]);
+      }
+   }
+ 
+   printf("Enter the elements of second matrix: \n");
+ 
+   for (i=0;i<row;i++)
+   {
+      for (j=0;j<column;j++)
+      {
+         scanf("%d", &secondMatrix[i][j]);
+      }
+   }
+   
+   printf("Sum of entered matrices: \n");
+   
+   for (i=0;i<row;i++) 
+   {
+      for (j=0;j<column;j++) 
+      {
+         sumMatrix[i][j] = firstMatrix[i][j] + secondMatrix[i][j];
+         printf("%d\t", sumMatrix[i][j]);
+      }
+      printf("\n");
+   }
+ 
+}
+void MatrixMultiplication()
+{
+    int a[100][100],b[100][100],mul[100][100],row,column,i,j,k;
+    printf("enter the number of row : ");    
+    scanf("%d",&row);    
+    printf("enter the number of column : ");    
+    scanf("%d",&column);    
+    printf("enter the first matrix element : \n");    
+    for(i=0;i<row;i++)    
+    {
+        for(j=0;j<column;j++)    
+        {
+            scanf("%d",&a[i][j]);    
+        }    
+    }    
+    printf("enter the second matrix element : \n");    
+    for(i=0;i<row;i++)    
+    {    
+        for(j=0;j<column;j++)    
+        {    
+            scanf("%d",&b[i][j]);    
+        }    
+    }    
+    
+    printf("multiplying the matrix : \n");    
+    for(i=0;i<row;i++)    
+    {    
+        for(j=0;j<column;j++)    
+        {
+            mul[i][j]=0;
+            for(k=0;k<column;k++)    
+            {    
+                mul[i][j]+=a[i][k]*b[k][j];    
+            }    
+        }    
+    }    
+    
+    for(i=0;i<row;i++)    
+    {    
+        for(j=0;j<column;j++)    
+        {    
+            printf("%d\t",mul[i][j]);    
+        }    
+            printf("\n");    
+    }    
+}
+
+
+
+
+void Clear()
+{
+    printf("\nprevious data is cleared");
+    result =0;      //clearing the data
+    k = 0;         //clearing the data
+}
+
+
+void main()
+{
+    int l=0;
+    while(1)
+    {
+        switch(menu())
+        {
+            case 1:
+            Addition();
+            break;
+
+            case 2:
+            Substraction();
+            //another way of doing k value as one in the switch case
+            k=1;        
+            break;
+           
+            case 3:
+            Multiplication();
+            k=1;
+            break;
+
+            case 4:
+            Division();
+            k=1;
+            break;
+
+            case 5:
+            Remainder();
+            k=1;
+            break;
+
+            case 6:
+            Power();
+            k=1;
+            break;
+
+            case 7:
+            Sin();
+            break;
+
+            case 8:
+            Cos();
+            break;
+
+            case 9:
+            Tan();
+            break;
+
+            case 10:
+            Cot();
+            break;
+
+            case 11:
+            Cosec();
+            break;
+
+            case 12:
+            Sec();
+            break;
+
+            case 13:
+            Log();
+            break;
+
+            case 14:
+            SquareRoot();
+            break;
+            
+            case 15:
+            Factorial();
+            break;
+            
+            case 16:
+            MatrixAddition();
+            break;
+            
+            case 17:
+            MatrixMultiplication();
+            break;
+
+            case 18:
+            Clear();
+            break;
+
+            case 19:
+            l=1;
+            break;
+    
+            default:
+            printf("\nYOU ENTERED A INVALID CHOICE PLEASE KINDLY CHECK");
+            
+        }
+        if(l==1)
+        {
+            break;
+            
+        }
+    }
+}
